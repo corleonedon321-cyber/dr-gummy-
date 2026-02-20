@@ -57,6 +57,42 @@ add_action('after_setup_theme', function () {
 });
 
 /* ==========================================================================
+   WIDGET AREAS
+   ========================================================================== */
+
+add_action('widgets_init', function () {
+    register_sidebar([
+        'name'          => __('Blog Sidebar', 'dr-gummy'),
+        'id'            => 'sidebar-blog',
+        'description'   => __('Widgets shown on the blog page sidebar.', 'dr-gummy'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget__title">',
+        'after_title'   => '</h3>',
+    ]);
+
+    register_sidebar([
+        'name'          => __('Shop Sidebar', 'dr-gummy'),
+        'id'            => 'sidebar-shop',
+        'description'   => __('Widgets shown on the shop page sidebar.', 'dr-gummy'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget__title">',
+        'after_title'   => '</h3>',
+    ]);
+
+    register_sidebar([
+        'name'          => __('Footer Widgets', 'dr-gummy'),
+        'id'            => 'sidebar-footer',
+        'description'   => __('Widgets shown in the footer area.', 'dr-gummy'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h4 class="widget__title">',
+        'after_title'   => '</h4>',
+    ]);
+});
+
+/* ==========================================================================
    ENQUEUE STYLES & SCRIPTS
    ========================================================================== */
 
@@ -423,7 +459,7 @@ add_action('wp_head', function () {
         '@type'       => 'Organization',
         'name'        => 'Dr. Gummy LLC',
         'url'         => home_url('/'),
-        'logo'        => DR_GUMMY_URI . '/assets/img/logo.png',
+        'logo'        => DR_GUMMY_URI . '/assets/images/logo.png',
         'description' => 'Medical-Grade Wellness, Reimagined. Doctor-formulated gummy supplements.',
         'address'     => [
             '@type'           => 'PostalAddress',
