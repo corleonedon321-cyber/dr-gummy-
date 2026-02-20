@@ -1,0 +1,305 @@
+================================================================================
+DR GUMMY THEME — WORDPRESS SETUP INSTRUCTIONS
+================================================================================
+
+Theme file: dr-gummy-theme.zip (185 KB, 61 files)
+WordPress: 6.0+ required
+PHP: 7.4+ required
+
+
+================================================================================
+1. INSTALL THE THEME
+================================================================================
+
+    a) Log in to WordPress Admin.
+    b) Go to Appearance > Themes > Add New > Upload Theme.
+    c) Choose "dr-gummy-theme.zip" and click "Install Now".
+    d) Click "Activate".
+
+
+================================================================================
+2. REQUIRED PLUGINS
+================================================================================
+
+Install and activate the following plugins BEFORE creating pages:
+
+    REQUIRED:
+    ---------
+    1. WooCommerce (free)
+       - Core e-commerce functionality (products, cart, checkout, accounts)
+       - Download: Plugins > Add New > search "WooCommerce"
+
+    2. WooCommerce Subscriptions (paid — by Woo)
+       - OR: YITH WooCommerce Subscription (free alternative)
+       - Enables Subscribe & Save functionality used across
+         shop, product, and bundle pages
+
+    RECOMMENDED:
+    ------------
+    3. Contact Form 7 (free) or WPForms Lite (free)
+       - For a working contact form on /contact/
+       - The theme has a styled form shell; connect it to a mail plugin
+
+    4. MailChimp for WooCommerce (free) or Klaviyo (free)
+       - For the newsletter signup forms in the footer and home page
+
+    5. Yoast SEO (free) or Rank Math (free)
+       - The theme has built-in meta tags, but a dedicated SEO plugin
+         gives you per-page control (the theme's built-in tags will
+         gracefully defer if an SEO plugin is active)
+
+    6. Smush or ShortPixel (free)
+       - Image optimization for product photos in /assets/images/
+
+
+================================================================================
+3. WORDPRESS PAGES TO CREATE
+================================================================================
+
+Create each page below in Pages > Add New. Set the title, slug, and
+assign the correct Page Template from the "Page Attributes" box.
+
+    #   Title               Slug        Page Template        Notes
+    --- ------------------- ----------- -------------------- --------------------
+    1   Home                home        (Default — uses      Set as static front
+                                        front-page.php       page in Settings >
+                                        automatically)       Reading)
+
+    2   Shop                shop        Shop Page            Also set as WooCommerce
+                                                             Shop page (see section 6)
+
+    3   Bundle              bundle      Bundle Builder       —
+
+    4   About               about       About Us             —
+
+    5   Science             science     Science              —
+
+    6   Blog                blog        Blog                 Set as Posts page in
+                                                             Settings > Reading
+
+    7   FAQs                faqs        FAQs                 —
+
+    8   Contact             contact     Contact Us           —
+
+    9   Legal               legal       Legal & Privacy      Contains 7 tabbed
+                                                             sections (Terms,
+                                                             Privacy, Cookies,
+                                                             Disclaimer, Refund,
+                                                             Contact, Accessibility)
+
+    IMPORTANT — Reading Settings (Settings > Reading):
+        "Your homepage displays" = A static page
+        Homepage: Home
+        Posts page: Blog
+
+
+================================================================================
+4. WOOCOMMERCE PRODUCTS TO CREATE
+================================================================================
+
+Create these as WooCommerce products (Products > Add New).
+Set the slug exactly as shown — the single-product.php template
+matches products by slug prefix.
+
+    #   Product Name                    Slug                Price
+    --- ------------------------------- ------------------- -------
+    1   Dr. Gummy Sleep Gummies         sleep-gummies       $45.00
+    2   Dr. Gummy Chill Gummies         chill-gummies       $45.00
+    3   Dr. Gummy Focus Gummies         focus-gummies       $45.00
+    4   Dr. Gummy Glow Gummies          glow-gummies        $45.00
+    5   Dr. Gummy Energy Gummies        energy-gummies      $45.00
+    6   Dr. Gummy Anti-Aging Gummies    anti-aging-gummies  $45.00
+
+    For each product:
+    - Set Regular Price: $45.00
+    - Add a featured image (product photo)
+    - Add 5-6 gallery images (front, back, ingredients, lifestyle, etc.)
+    - Set product type to "Simple product"
+    - Check "Virtual" if not shipping physical goods during dev/testing
+    - If using WooCommerce Subscriptions, also create a subscription
+      variation at $36.00/month (20% off)
+
+
+================================================================================
+5. NAVIGATION MENUS
+================================================================================
+
+Go to Appearance > Menus and create the following menus.
+
+    MENU 1: "Primary Navigation"
+    Assign to: Primary Navigation location
+    -------------------------------------------------------
+    Items:
+        Shop+                   (Custom Link: /shop/)
+          |-- Sleep Gummies     (link to Sleep product)
+          |-- Chill Gummies     (link to Chill product)
+          |-- Focus Gummies     (link to Focus product)
+          |-- Glow Gummies      (link to Glow product)
+          |-- Energy Gummies    (link to Energy product)
+          |-- Anti-Aging Gummies (link to Anti-Aging product)
+        About                   (Page: About)
+        Science                 (Page: Science)
+        Bundle                  (Page: Bundle)
+        Blog                    (Page: Blog)
+        Contact                 (Page: Contact)
+
+    MENU 2: "Footer Navigation"
+    Assign to: Footer Navigation location
+    -------------------------------------------------------
+    Items:
+        Shop         (Page: Shop)
+        About        (Page: About)
+        Science      (Page: Science)
+        Blog         (Page: Blog)
+        Contact      (Page: Contact)
+        FAQs         (Page: FAQs)
+
+    MENU 3: "Legal Pages"
+    Assign to: Legal Pages location
+    -------------------------------------------------------
+    Items:
+        Privacy Policy    (Custom Link: /legal/)
+        Terms of Service  (Custom Link: /legal/#terms)
+        Refund Policy     (Custom Link: /legal/#refund)
+        Shipping Policy   (Custom Link: /legal/#shipping)
+
+    NOTE: If no menus are assigned, the theme shows fallback
+    menus with hardcoded links (see functions.php fallback functions).
+
+
+================================================================================
+6. WOOCOMMERCE SETTINGS
+================================================================================
+
+After installing WooCommerce, configure the following:
+
+    a) GENERAL (WooCommerce > Settings > General):
+       - Store Address: 1209 Orange Street, Wilmington, DE 19801
+       - Currency: United States Dollar ($)
+       - Selling locations: Sell to all countries (or US-only)
+       - Enable taxes: Yes
+
+    b) PRODUCTS (WooCommerce > Settings > Products):
+       - Shop page: Select the "Shop" page you created
+       - Weight unit: oz
+       - Dimensions unit: in
+       - Product images:
+           Main image width: 600px
+           Thumbnail width: 100px
+
+    c) SHIPPING (WooCommerce > Settings > Shipping):
+       - Add Shipping Zone: "United States"
+       - Flat Rate: $4.95
+       - Free Shipping: minimum order amount $50.00
+       - For bundles of 2+ bottles, free shipping is handled
+         by the bundle.js logic; you may also add a coupon or
+         shipping class to enforce this server-side
+
+    d) PAYMENTS (WooCommerce > Settings > Payments):
+       - Enable: Stripe (Visa, Mastercard, Amex)
+       - Enable: PayPal
+       - Enable: Apple Pay / Google Pay (via Stripe)
+
+    e) ACCOUNTS & PRIVACY:
+       - Enable guest checkout: Yes
+       - Enable account creation during checkout: Yes
+
+    f) ADVANCED (WooCommerce > Settings > Advanced > Page Setup):
+       - Cart page: Cart (auto-created by WooCommerce)
+       - Checkout page: Checkout (auto-created by WooCommerce)
+       - My Account page: My Account (auto-created by WooCommerce)
+       - Terms and Conditions page: Legal
+
+
+================================================================================
+7. CUSTOM POST TYPES (AUTO-REGISTERED BY THEME)
+================================================================================
+
+The theme automatically registers these CPTs in functions.php.
+No plugin needed — they appear in the admin sidebar after activation.
+
+    a) FAQs (post type: faq)
+       - Add FAQ entries with title (question) and content (answer)
+       - Assign each to an "FAQ Category" taxonomy
+       - Categories used: Ingredients, Dosage, Shipping, Returns,
+         Subscription
+
+    b) Science (post type: science)
+       - Add science/ingredient articles
+       - Uses title, editor, thumbnail, and excerpt
+
+
+================================================================================
+8. WIDGET AREAS
+================================================================================
+
+The theme registers 3 widget areas (Appearance > Widgets):
+
+    1. Blog Sidebar  (sidebar-blog)   — for the blog page
+    2. Shop Sidebar  (sidebar-shop)   — for the shop page
+    3. Footer Widgets (sidebar-footer) — for the footer area
+
+    These are optional — the pages work without widgets, but you can
+    add search, recent posts, product filters, etc.
+
+
+================================================================================
+9. CUSTOM LOGO
+================================================================================
+
+    a) Go to Appearance > Customize > Site Identity.
+    b) Upload your logo (recommended: 200x60px, SVG or PNG).
+    c) The theme falls back to the text "DR GUMMY" if no logo is set.
+
+
+================================================================================
+10. IMAGE ASSETS
+================================================================================
+
+    Place all image files in: /wp-content/themes/dr-gummy-theme/assets/images/
+
+    Recommended images to add:
+    - logo.png (or .svg)    — site logo
+    - hero.jpg              — home page hero lifestyle photo (1920x1080)
+    - Product photos        — upload via WooCommerce product editor
+    - Team/about photos     — can be added via WordPress Media Library
+    - og-image.jpg          — Open Graph sharing image (1200x630)
+
+
+================================================================================
+11. PERMALINKS
+================================================================================
+
+    Settings > Permalinks:
+    - Select "Post name" (/%postname%/)
+    - This ensures /shop/, /about/, /bundle/, etc. work correctly
+    - Click "Save Changes" after activating the theme to flush
+      rewrite rules (especially for custom post types)
+
+
+================================================================================
+12. POST-INSTALL CHECKLIST
+================================================================================
+
+    [ ] Theme activated
+    [ ] WooCommerce installed and activated
+    [ ] WooCommerce setup wizard completed
+    [ ] All 9 pages created with correct slugs and templates
+    [ ] Reading settings: static front page = Home, posts page = Blog
+    [ ] All 6 products created with correct slugs
+    [ ] 3 menus created and assigned to theme locations
+    [ ] Permalinks set to "Post name" and saved
+    [ ] Custom logo uploaded (optional)
+    [ ] Product images added
+    [ ] WooCommerce Shop page set to "Shop"
+    [ ] Shipping zones and rates configured
+    [ ] Payment gateways configured
+    [ ] FAQ entries added via FAQs custom post type
+    [ ] Tested: home, shop, product, bundle, about, science,
+        blog, FAQs, contact, legal, cart drawer, mobile nav
+    [ ] SSL certificate active (HTTPS)
+
+
+================================================================================
+END OF SETUP INSTRUCTIONS
+================================================================================
