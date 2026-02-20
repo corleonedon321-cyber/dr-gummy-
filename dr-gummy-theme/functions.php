@@ -106,6 +106,11 @@ add_action('wp_enqueue_scripts', function () {
         wp_enqueue_style('dr-gummy-account', DR_GUMMY_URI . '/assets/css/account.css', ['dr-gummy-style'], DR_GUMMY_VERSION);
     }
 
+    if (is_page_template('page-legal.php') || is_page('legal')) {
+        wp_enqueue_style('dr-gummy-legal', DR_GUMMY_URI . '/assets/css/legal.css', ['dr-gummy-style'], DR_GUMMY_VERSION);
+        wp_enqueue_script('dr-gummy-legal', DR_GUMMY_URI . '/assets/js/legal.js', [], DR_GUMMY_VERSION, true);
+    }
+
     // Cart drawer (global — available on every page)
     wp_enqueue_style('dr-gummy-cart-drawer', DR_GUMMY_URI . '/assets/css/cart-drawer.css', ['dr-gummy-style'], DR_GUMMY_VERSION);
     wp_enqueue_script(
