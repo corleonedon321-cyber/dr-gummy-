@@ -1,0 +1,195 @@
+/**
+ * Science Page Styles
+ * @package DR_Gummy
+ */
+
+/* Hero */
+.science-hero {
+  background: linear-gradient(135deg, var(--color-dark-text) 0%, #2a3a2e 100%);
+  color: var(--color-white);
+  text-align: center;
+  padding: var(--space-20) 0 var(--space-16);
+}
+.science-hero__eyebrow {
+  display: inline-block;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  color: var(--color-teal-accent);
+  margin-bottom: var(--space-4);
+}
+.science-hero__title {
+  font-family: var(--font-serif);
+  font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl));
+  color: var(--color-white);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-5);
+}
+.science-hero__subtitle {
+  font-size: var(--text-lg);
+  max-width: 660px;
+  margin: 0 auto;
+  opacity: 0.8;
+  line-height: var(--leading-relaxed);
+}
+
+/* Shared sub */
+.science-section-sub {
+  font-size: var(--text-base);
+  color: var(--color-medium-gray);
+  margin-bottom: var(--space-10);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Formulation Principles */
+.science-principles__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+.science-principles__card {
+  background: var(--color-white);
+  border: var(--border-width) solid var(--color-border-gray);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  text-align: center;
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+.science-principles__card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+.science-principles__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  background: rgba(46,87,53,0.08);
+  border-radius: var(--radius-full);
+  color: var(--color-brand-green-dark);
+  margin-bottom: var(--space-4);
+}
+.science-principles__card h3 {
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  margin-bottom: var(--space-2);
+}
+.science-principles__card p {
+  font-size: var(--text-sm);
+  color: var(--color-medium-gray);
+  line-height: var(--leading-normal);
+}
+
+/* Ingredients */
+.science-ingredients__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+}
+.science-ingredients__card {
+  border: var(--border-width) solid var(--color-border-gray);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  background: var(--color-off-white);
+}
+.science-ingredients__use {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-teal-accent);
+  margin-bottom: var(--space-2);
+}
+.science-ingredients__name {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  margin-bottom: var(--space-2);
+}
+.science-ingredients__benefit {
+  font-size: var(--text-sm);
+  color: var(--color-medium-gray);
+  line-height: var(--leading-relaxed);
+}
+
+/* Testing Steps */
+.science-testing__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+.science-testing__step {
+  text-align: center;
+  position: relative;
+}
+.science-testing__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--color-brand-green-dark);
+  color: var(--color-white);
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-4);
+}
+.science-testing__step h3 {
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  margin-bottom: var(--space-2);
+}
+.science-testing__step p {
+  font-size: var(--text-sm);
+  color: var(--color-medium-gray);
+  line-height: var(--leading-normal);
+}
+
+/* Certifications */
+.science-certs__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+.science-certs__card {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  border: var(--border-width) solid var(--color-border-gray);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  background: var(--color-off-white);
+}
+.science-certs__card svg { flex-shrink: 0; margin-top: 2px; }
+.science-certs__card strong {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  margin-bottom: var(--space-1);
+}
+.science-certs__card p {
+  font-size: var(--text-sm);
+  color: var(--color-medium-gray);
+  line-height: var(--leading-normal);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .science-principles__grid,
+  .science-testing__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .science-ingredients__grid,
+  .science-certs__grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .science-principles__grid,
+  .science-testing__grid { grid-template-columns: 1fr; }
+}

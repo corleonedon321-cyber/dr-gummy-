@@ -111,6 +111,29 @@ add_action('wp_enqueue_scripts', function () {
         wp_enqueue_script('dr-gummy-legal', DR_GUMMY_URI . '/assets/js/legal.js', [], DR_GUMMY_VERSION, true);
     }
 
+    if (is_page_template('page-about.php') || is_page('about')) {
+        wp_enqueue_style('dr-gummy-about', DR_GUMMY_URI . '/assets/css/about.css', ['dr-gummy-style'], DR_GUMMY_VERSION);
+    }
+
+    if (is_page_template('page-science.php') || is_page('science')) {
+        wp_enqueue_style('dr-gummy-science', DR_GUMMY_URI . '/assets/css/science.css', ['dr-gummy-style'], DR_GUMMY_VERSION);
+    }
+
+    if (is_page_template('page-blog.php') || is_page('blog')) {
+        wp_enqueue_style('dr-gummy-blog', DR_GUMMY_URI . '/assets/css/blog.css', ['dr-gummy-style'], DR_GUMMY_VERSION);
+        wp_enqueue_script('dr-gummy-blog', DR_GUMMY_URI . '/assets/js/blog.js', [], DR_GUMMY_VERSION, true);
+    }
+
+    if (is_page_template('page-faqs.php') || is_page('faqs')) {
+        wp_enqueue_style('dr-gummy-faqs', DR_GUMMY_URI . '/assets/css/faqs.css', ['dr-gummy-style'], DR_GUMMY_VERSION);
+        wp_enqueue_script('dr-gummy-faqs', DR_GUMMY_URI . '/assets/js/faqs.js', [], DR_GUMMY_VERSION, true);
+    }
+
+    if (is_page_template('page-contact.php') || is_page('contact')) {
+        wp_enqueue_style('dr-gummy-contact', DR_GUMMY_URI . '/assets/css/contact.css', ['dr-gummy-style'], DR_GUMMY_VERSION);
+        wp_enqueue_script('dr-gummy-contact', DR_GUMMY_URI . '/assets/js/contact.js', [], DR_GUMMY_VERSION, true);
+    }
+
     // Cart drawer (global — available on every page)
     wp_enqueue_style('dr-gummy-cart-drawer', DR_GUMMY_URI . '/assets/css/cart-drawer.css', ['dr-gummy-style'], DR_GUMMY_VERSION);
     wp_enqueue_script(
