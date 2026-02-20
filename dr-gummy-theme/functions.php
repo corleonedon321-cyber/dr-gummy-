@@ -212,6 +212,46 @@ add_filter('woocommerce_add_to_cart_fragments', function ($fragments) {
    ========================================================================== */
 
 /**
+ * Fallback menu for primary nav (desktop) — shown when no WP menu is assigned.
+ */
+function dr_gummy_fallback_menu(): void {
+    ?>
+    <ul class="site-header__menu">
+      <li class="menu-item menu-item-has-children"><a href="/shop/">Shop+</a>
+        <ul class="sub-menu">
+          <li><a href="/product/beauty-boost-gummies/">Beauty Boost Gummies</a></li>
+          <li><a href="/product/ultra-focus-gummies/">Ultra Focus Gummies</a></li>
+          <li><a href="/product/energy-workout-booster-gummies/">Energy Booster Gummies</a></li>
+          <li><a href="/product/anti-aging-gummies/">Anti-Aging Gummies</a></li>
+        </ul>
+      </li>
+      <li class="menu-item"><a href="/about/">About</a></li>
+      <li class="menu-item"><a href="/science/">Science</a></li>
+      <li class="menu-item"><a href="/bundle/">Bundle</a></li>
+      <li class="menu-item"><a href="/blog/">Blog</a></li>
+      <li class="menu-item"><a href="/contact/">Contact</a></li>
+    </ul>
+    <?php
+}
+
+/**
+ * Fallback menu for primary nav (mobile).
+ */
+function dr_gummy_fallback_menu_mobile(): void {
+    ?>
+    <ul class="mobile-nav__menu">
+      <li><a href="/shop/">Shop</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/science/">Science</a></li>
+      <li><a href="/bundle/">Bundle</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/contact/">Contact</a></li>
+      <li><a href="/faqs/">FAQs</a></li>
+    </ul>
+    <?php
+}
+
+/**
  * Load a component partial from the /components/ directory.
  *
  * @param string $name Component filename (without .php).
