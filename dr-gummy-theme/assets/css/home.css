@@ -1,0 +1,67 @@
+/**
+ * Home Page Styles
+ *
+ * @package DR_Gummy
+ */
+
+/* Hero Section */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+  background-color: var(--color-off-white);
+  overflow: hidden;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.hero__tagline {
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--color-brand-green-dark);
+  font-weight: var(--weight-semibold);
+  margin-bottom: var(--space-4);
+}
+
+.hero__heading {
+  font-family: var(--font-serif);
+  font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl));
+  line-height: var(--leading-tight);
+  color: var(--color-dark-text);
+  margin-bottom: var(--space-6);
+}
+
+.hero__cta-group {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+/* Product Grid Section */
+.home-products {
+  padding: var(--space-16) 0;
+}
+
+.home-products__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+@media (max-width: 1024px) {
+  .home-products__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .home-products__grid {
+    grid-template-columns: 1fr;
+  }
+}

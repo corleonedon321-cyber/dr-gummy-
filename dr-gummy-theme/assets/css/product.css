@@ -1,0 +1,80 @@
+/**
+ * Product Detail Page (PDP) Styles
+ *
+ * @package DR_Gummy
+ */
+
+/* PDP layout — image left, info right */
+.pdp-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  padding: var(--space-8) 0;
+}
+
+@media (max-width: 768px) {
+  .pdp-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
+
+/* Product gallery */
+.pdp-gallery__main {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.pdp-gallery__main img {
+  width: 100%;
+  height: auto;
+}
+
+/* Product info */
+.pdp-info__title {
+  font-family: var(--font-serif);
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-2);
+}
+
+.pdp-info__price {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  margin-bottom: var(--space-4);
+}
+
+.pdp-info__subscribe {
+  background-color: var(--color-off-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+/* Quantity selector */
+.qty-selector {
+  display: inline-flex;
+  align-items: center;
+  border: var(--border-width) solid var(--color-border-gray);
+  border-radius: var(--radius-md);
+}
+
+.qty-selector__btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: var(--text-lg);
+}
+
+.qty-selector__value {
+  width: 48px;
+  text-align: center;
+  font-weight: var(--weight-semibold);
+  border: none;
+  border-left: var(--border-width) solid var(--color-border-gray);
+  border-right: var(--border-width) solid var(--color-border-gray);
+}

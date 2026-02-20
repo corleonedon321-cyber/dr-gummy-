@@ -1,0 +1,55 @@
+/**
+ * Account Dashboard Styles
+ *
+ * @package DR_Gummy
+ */
+
+/* Dashboard layout — sidebar + main */
+.account-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: var(--space-8);
+  padding: var(--space-8) 0;
+}
+
+@media (max-width: 768px) {
+  .account-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Sidebar nav */
+.account-sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.account-sidebar__link {
+  display: block;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-dark-text);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.account-sidebar__link:hover,
+.account-sidebar__link.is-active {
+  background-color: rgba(91, 164, 181, 0.08);
+  color: var(--color-teal-accent);
+}
+
+/* Dashboard cards */
+.account-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
+@media (max-width: 640px) {
+  .account-cards {
+    grid-template-columns: 1fr;
+  }
+}
