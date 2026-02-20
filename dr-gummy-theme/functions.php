@@ -83,8 +83,13 @@ add_action('wp_enqueue_scripts', function () {
         wp_enqueue_script('dr-gummy-home', DR_GUMMY_URI . '/assets/js/home.js', [], DR_GUMMY_VERSION, true);
     }
 
-    if (function_exists('is_shop') && (is_shop() || is_product_category())) {
+    if (
+        (function_exists('is_shop') && (is_shop() || is_product_category()))
+        || is_page_template('page-shop.php')
+        || is_page('shop')
+    ) {
         wp_enqueue_style('dr-gummy-shop', DR_GUMMY_URI . '/assets/css/shop.css', ['dr-gummy-style'], DR_GUMMY_VERSION);
+        wp_enqueue_script('dr-gummy-shop', DR_GUMMY_URI . '/assets/js/shop.js', [], DR_GUMMY_VERSION, true);
     }
 
     if (function_exists('is_product') && is_product()) {
