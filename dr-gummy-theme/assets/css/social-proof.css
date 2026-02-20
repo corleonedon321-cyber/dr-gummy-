@@ -1,0 +1,89 @@
+/**
+ * Social Proof Popup Styles
+ * @package DR_Gummy
+ */
+
+.social-proof {
+  position: fixed;
+  bottom: var(--space-6);
+  left: var(--space-6);
+  z-index: 900;
+  background: var(--color-white);
+  border: var(--border-width) solid var(--color-border-gray);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-4);
+  max-width: 340px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--transition-base), transform var(--transition-base);
+  pointer-events: none;
+}
+
+.social-proof.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.social-proof[hidden] { display: none; }
+
+.social-proof__close {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  background: none;
+  border: none;
+  font-size: var(--text-lg);
+  color: var(--color-medium-gray);
+  cursor: pointer;
+  line-height: 1;
+  padding: var(--space-1);
+}
+
+.social-proof__close:hover { color: var(--color-dark-text); }
+
+.social-proof__inner {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.social-proof__img {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.social-proof__text {
+  font-size: var(--text-sm);
+  color: var(--color-dark-text);
+  margin: 0;
+  line-height: var(--leading-tight);
+}
+
+.social-proof__product {
+  font-size: var(--text-xs);
+  color: var(--color-medium-gray);
+  margin: var(--space-1) 0 0;
+}
+
+.social-proof__product strong {
+  color: var(--color-brand-green-dark);
+}
+
+.social-proof__time {
+  font-size: var(--text-xs);
+  color: var(--color-medium-gray);
+  margin: var(--space-1) 0 0;
+}
+
+@media (max-width: 480px) {
+  .social-proof {
+    left: var(--space-3);
+    right: var(--space-3);
+    bottom: var(--space-3);
+    max-width: none;
+  }
+}

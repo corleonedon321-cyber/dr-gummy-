@@ -165,6 +165,12 @@ defined('ABSPATH') || exit;
 
 </footer>
 
+<!-- Social Proof Popup -->
+<?php dr_gummy_component('social-proof'); ?>
+
+<!-- Cookie Consent Banner -->
+<?php dr_gummy_component('cookie-consent'); ?>
+
 <?php wp_footer(); ?>
 </body>
 </html>

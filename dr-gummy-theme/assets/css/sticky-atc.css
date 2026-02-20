@@ -1,0 +1,109 @@
+/**
+ * Sticky Add-to-Cart Bar — appears on scroll past main ATC button
+ * @package DR_Gummy
+ */
+
+.sticky-atc {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 800;
+  background: var(--color-white);
+  border-top: var(--border-width) solid var(--color-border-gray);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
+  padding: var(--space-3) var(--space-6);
+  transform: translateY(100%);
+  transition: transform var(--transition-base);
+}
+
+.sticky-atc.is-visible {
+  transform: translateY(0);
+}
+
+.sticky-atc[hidden] { display: none; }
+
+.sticky-atc__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.sticky-atc__product {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex: 1;
+  min-width: 0;
+}
+
+.sticky-atc__swatch {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.sticky-atc__name {
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  color: var(--color-dark-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sticky-atc__price {
+  font-size: var(--text-sm);
+  color: var(--color-medium-gray);
+}
+
+.sticky-atc__price strong {
+  color: var(--color-brand-green-dark);
+  font-size: var(--text-base);
+}
+
+.sticky-atc__price s {
+  margin-left: var(--space-2);
+  font-size: var(--text-sm);
+}
+
+.sticky-atc__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.sticky-atc__stars {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-xs);
+  color: var(--color-medium-gray);
+}
+
+.sticky-atc__stars svg {
+  width: 14px;
+  height: 14px;
+  fill: var(--color-star-yellow);
+}
+
+.sticky-atc__btn {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .sticky-atc__stars { display: none; }
+  .sticky-atc__price s { display: none; }
+  .sticky-atc__inner { gap: var(--space-3); }
+  .sticky-atc { padding: var(--space-2) var(--space-4); }
+}
+
+@media (max-width: 480px) {
+  .sticky-atc__name { font-size: var(--text-sm); }
+  .sticky-atc__swatch { width: 32px; height: 32px; }
+}

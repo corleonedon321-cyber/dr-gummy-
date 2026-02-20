@@ -427,11 +427,11 @@
 }
 
 .shop-card__atc:hover {
-  background-color: #333333;
+  background-color: #333;
 }
 
 .shop-card__atc:active {
-  background-color: #111111;
+  background-color: var(--color-dark-text);
 }
 
 .shop-card__atc:disabled {

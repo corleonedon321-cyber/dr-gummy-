@@ -31,6 +31,9 @@ Tags: woocommerce, e-commerce, custom-menu, custom-logo
   --color-star-yellow: #F59E0B;
   --color-teal-accent: #5BA4B5;
   --color-success-green: #16A34A;
+  --color-error-red: #EF4444;
+  --color-energy-orange: #E07A4F;
+  --color-purple-accent: #8B6DB5;
 
   /* ---- Typography ---- */
   --font-sans: 'DM Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -451,7 +454,7 @@ p {
 }
 
 .input--error {
-  border-color: #EF4444;
+  border-color: var(--color-error-red);
 }
 
 .input-label {
@@ -1343,6 +1346,18 @@ textarea.input {
 @media (max-width: 480px) {
   .site-footer__links-grid {
     grid-template-columns: 1fr;
+  }
+
+  .search-overlay {
+    padding-top: 80px;
+  }
+
+  .site-footer__newsletter-form {
+    flex-direction: column;
+  }
+
+  .site-footer__newsletter-btn {
+    width: 100%;
   }
 }
 

@@ -262,7 +262,7 @@
 }
 
 .cart-drawer__item-remove:hover {
-  color: #EF4444;
+  color: var(--color-error-red);
   background-color: rgba(239, 68, 68, 0.08);
 }
 

@@ -212,5 +212,8 @@
 @media (max-width: 480px) {
   .about-values__grid { grid-template-columns: 1fr; }
   .about-certs__grid { grid-template-columns: 1fr; }
-  .about-stats__container { grid-template-columns: repeat(2, 1fr); }
+  .about-stats__container { grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
+  .about-page { padding: var(--space-6) 0 var(--space-10); }
+  .about-hero { padding: var(--space-10) var(--space-4); }
+  .about-cta { padding: var(--space-8) var(--space-4); }
 }

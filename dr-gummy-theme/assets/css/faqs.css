@@ -120,3 +120,15 @@
   color: var(--color-medium-gray);
   margin-bottom: var(--space-4);
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .faqs-tabs { flex-wrap: wrap; gap: var(--space-2); }
+  .faqs-page { padding: var(--space-6) 0 var(--space-10); }
+}
+@media (max-width: 480px) {
+  .faqs-item__question { padding: var(--space-4); gap: var(--space-3); font-size: var(--text-sm); }
+  .faqs-item__answer { padding: 0 var(--space-4) var(--space-4); }
+  .faqs-cta { padding: var(--space-5); }
+  .faqs-page__container { padding: 0 var(--space-4); }
+}

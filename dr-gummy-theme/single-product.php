@@ -658,14 +658,14 @@ $comparison = [
               <?php if ($row['us']) : ?>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-success-green)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
               <?php else : ?>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-error-red)" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
               <?php endif; ?>
             </td>
             <td class="pdp-comparison__check pdp-comparison__check--them">
               <?php if ($row['them']) : ?>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-success-green)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
               <?php else : ?>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-error-red)" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
               <?php endif; ?>
             </td>
           </tr>
@@ -675,5 +675,35 @@ $comparison = [
     </div>
   </div>
 </section>
+
+<!-- FDA DISCLAIMER -->
+<section class="pdp-section pdp-fda-disclaimer">
+  <div class="container container--narrow">
+    <p class="pdp-fda-disclaimer__text">* These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Consult your physician before use if you are pregnant, nursing, taking medication, or have a medical condition.</p>
+  </div>
+</section>
+
+<!-- STICKY ADD-TO-CART BAR -->
+<div class="sticky-atc" id="sticky-atc" hidden>
+  <div class="sticky-atc__inner">
+    <div class="sticky-atc__product">
+      <div class="sticky-atc__swatch" style="background-color: <?php echo esc_attr($p['color']); ?>; border-radius: var(--radius-md);"></div>
+      <div>
+        <div class="sticky-atc__name"><?php echo esc_html($p['name']); ?></div>
+        <div class="sticky-atc__price">
+          <strong><?php echo esc_html($p['sub_price']); ?></strong>
+          <s><?php echo esc_html($p['full_price']); ?></s>
+        </div>
+      </div>
+    </div>
+    <div class="sticky-atc__actions">
+      <div class="sticky-atc__stars">
+        <svg viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+        <?php echo esc_html($p['avg_rating']); ?> (<?php echo esc_html($p['review_count']); ?>)
+      </div>
+      <button class="btn btn--primary btn--sm sticky-atc__btn" type="button">Add to Cart</button>
+    </div>
+  </div>
+</div>
 
 <?php get_footer(); ?>

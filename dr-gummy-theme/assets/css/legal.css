@@ -364,6 +364,14 @@
   .legal-panel__actions .btn {
     width: 100%;
   }
+
+  .legal-panel {
+    padding: var(--space-4);
+  }
+
+  .legal-page__container {
+    padding: 0 var(--space-3);
+  }
 }
 
 /* ==========================================================================

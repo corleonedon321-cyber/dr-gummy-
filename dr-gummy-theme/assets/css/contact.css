@@ -41,7 +41,7 @@
   padding: var(--space-8);
   box-shadow: var(--shadow-sm);
 }
-.contact-required { color: #EF4444; }
+.contact-required { color: var(--color-error-red); }
 
 .contact-form__success {
   display: flex;
