@@ -12,45 +12,7 @@ defined('ABSPATH') || exit;
 <!-- ============================================================
      CART DRAWER (slide-out from right)
      ============================================================ -->
-<div class="cart-drawer" id="cart-drawer" aria-hidden="true">
-  <div class="cart-drawer__overlay" data-cart-toggle></div>
-  <aside class="cart-drawer__panel" role="dialog" aria-label="<?php esc_attr_e('Shopping cart', 'dr-gummy'); ?>">
-    <div class="cart-drawer__header">
-      <h2 class="cart-drawer__title">Your Cart</h2>
-      <button class="cart-drawer__close" aria-label="<?php esc_attr_e('Close cart', 'dr-gummy'); ?>" data-cart-toggle>
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-          <line x1="18" y1="6" x2="6" y2="18"/>
-          <line x1="6" y1="6" x2="18" y2="18"/>
-        </svg>
-      </button>
-    </div>
-
-    <div class="cart-drawer__body" id="cart-drawer-items">
-      <!-- Items populated via JS / WC fragments -->
-      <div class="cart-drawer__empty">
-        <p>Your cart is currently empty.</p>
-        <a href="/shop/" class="btn btn--primary">Continue Shopping</a>
-      </div>
-    </div>
-
-    <div class="cart-drawer__footer">
-      <div class="cart-drawer__free-shipping">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-success-green)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        <span>Free shipping on orders over $50</span>
-      </div>
-      <div class="cart-drawer__subtotal">
-        <span>Subtotal</span>
-        <span class="cart-drawer__subtotal-amount" id="cart-drawer-subtotal">$0.00</span>
-      </div>
-      <a href="<?php echo esc_url(function_exists('wc_get_checkout_url') ? wc_get_checkout_url() : '/checkout/'); ?>" class="btn btn--primary btn--full btn--lg">
-        Checkout
-      </a>
-      <a href="<?php echo esc_url(function_exists('wc_get_cart_url') ? wc_get_cart_url() : '/cart/'); ?>" class="cart-drawer__view-cart">
-        View Cart
-      </a>
-    </div>
-  </aside>
-</div>
+<?php dr_gummy_component('cart-drawer'); ?>
 
 <!-- ============================================================
      SITE FOOTER

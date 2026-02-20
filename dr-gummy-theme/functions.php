@@ -106,7 +106,8 @@ add_action('wp_enqueue_scripts', function () {
         wp_enqueue_style('dr-gummy-account', DR_GUMMY_URI . '/assets/css/account.css', ['dr-gummy-style'], DR_GUMMY_VERSION);
     }
 
-    // Global scripts
+    // Cart drawer (global — available on every page)
+    wp_enqueue_style('dr-gummy-cart-drawer', DR_GUMMY_URI . '/assets/css/cart-drawer.css', ['dr-gummy-style'], DR_GUMMY_VERSION);
     wp_enqueue_script(
         'dr-gummy-cart-drawer',
         DR_GUMMY_URI . '/assets/js/cart-drawer.js',
