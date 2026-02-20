@@ -80,6 +80,7 @@ add_action('wp_enqueue_scripts', function () {
     // Page-specific styles (loaded conditionally)
     if (is_front_page()) {
         wp_enqueue_style('dr-gummy-home', DR_GUMMY_URI . '/assets/css/home.css', ['dr-gummy-style'], DR_GUMMY_VERSION);
+        wp_enqueue_script('dr-gummy-home', DR_GUMMY_URI . '/assets/js/home.js', [], DR_GUMMY_VERSION, true);
     }
 
     if (function_exists('is_shop') && (is_shop() || is_product_category())) {
