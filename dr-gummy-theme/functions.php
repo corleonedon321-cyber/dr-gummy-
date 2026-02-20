@@ -94,6 +94,7 @@ add_action('wp_enqueue_scripts', function () {
 
     if (function_exists('is_product') && is_product()) {
         wp_enqueue_style('dr-gummy-product', DR_GUMMY_URI . '/assets/css/product.css', ['dr-gummy-style'], DR_GUMMY_VERSION);
+        wp_enqueue_script('dr-gummy-product', DR_GUMMY_URI . '/assets/js/product.js', [], DR_GUMMY_VERSION, true);
     }
 
     if (function_exists('is_account_page') && is_account_page()) {
